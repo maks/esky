@@ -7,37 +7,7 @@ part of 'widget_type.dart';
 // FreezedGenerator
 // **************************************************************************
 
-mixin _$WidgetType {
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result page(Body body, Header header),
-    @required Result body(),
-    @required Result header(String title),
-  });
-
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result page(Body body, Header header),
-    Result body(),
-    Result header(String title),
-    @required Result orElse(),
-  });
-
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result page(Page value),
-    @required Result body(Body value),
-    @required Result header(Header value),
-  });
-
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result page(Page value),
-    Result body(Body value),
-    Result header(Header value),
-    @required Result orElse(),
-  });
-}
+T _$identity<T>(T value) => value;
 
 class _$WidgetTypeTearOff {
   const _$WidgetTypeTearOff();
@@ -60,7 +30,77 @@ class _$WidgetTypeTearOff {
   }
 }
 
+// ignore: unused_element
 const $WidgetType = _$WidgetTypeTearOff();
+
+mixin _$WidgetType {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result page(Body body, Header header),
+    @required Result body(),
+    @required Result header(String title),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result page(Body body, Header header),
+    Result body(),
+    Result header(String title),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result page(Page value),
+    @required Result body(Body value),
+    @required Result header(Header value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result page(Page value),
+    Result body(Body value),
+    Result header(Header value),
+    @required Result orElse(),
+  });
+}
+
+abstract class $WidgetTypeCopyWith<$Res> {
+  factory $WidgetTypeCopyWith(
+          WidgetType value, $Res Function(WidgetType) then) =
+      _$WidgetTypeCopyWithImpl<$Res>;
+}
+
+class _$WidgetTypeCopyWithImpl<$Res> implements $WidgetTypeCopyWith<$Res> {
+  _$WidgetTypeCopyWithImpl(this._value, this._then);
+
+  final WidgetType _value;
+  // ignore: unused_field
+  final $Res Function(WidgetType) _then;
+}
+
+abstract class $PageCopyWith<$Res> {
+  factory $PageCopyWith(Page value, $Res Function(Page) then) =
+      _$PageCopyWithImpl<$Res>;
+  $Res call({Body body, Header header});
+}
+
+class _$PageCopyWithImpl<$Res> extends _$WidgetTypeCopyWithImpl<$Res>
+    implements $PageCopyWith<$Res> {
+  _$PageCopyWithImpl(Page _value, $Res Function(Page) _then)
+      : super(_value, (v) => _then(v as Page));
+
+  @override
+  Page get _value => super._value as Page;
+
+  @override
+  $Res call({
+    Object body = freezed,
+    Object header = freezed,
+  }) {
+    return _then(Page(
+      body: body == freezed ? _value.body : body as Body,
+      header: header == freezed ? _value.header : header as Header,
+    ));
+  }
+}
 
 class _$Page implements Page {
   const _$Page({this.body, this.header});
@@ -92,15 +132,8 @@ class _$Page implements Page {
       const DeepCollectionEquality().hash(header);
 
   @override
-  _$Page copyWith({
-    Object body = freezed,
-    Object header = freezed,
-  }) {
-    return _$Page(
-      body: body == freezed ? this.body : body as Body,
-      header: header == freezed ? this.header : header as Header,
-    );
-  }
+  $PageCopyWith<Page> get copyWith =>
+      _$PageCopyWithImpl<Page>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -164,8 +197,21 @@ abstract class Page implements WidgetType {
 
   Body get body;
   Header get header;
+  $PageCopyWith<Page> get copyWith;
+}
 
-  Page copyWith({Body body, Header header});
+abstract class $BodyCopyWith<$Res> {
+  factory $BodyCopyWith(Body value, $Res Function(Body) then) =
+      _$BodyCopyWithImpl<$Res>;
+}
+
+class _$BodyCopyWithImpl<$Res> extends _$WidgetTypeCopyWithImpl<$Res>
+    implements $BodyCopyWith<$Res> {
+  _$BodyCopyWithImpl(Body _value, $Res Function(Body) _then)
+      : super(_value, (v) => _then(v as Body));
+
+  @override
+  Body get _value => super._value as Body;
 }
 
 class _$Body implements Body {
@@ -245,6 +291,30 @@ abstract class Body implements WidgetType {
   const factory Body() = _$Body;
 }
 
+abstract class $HeaderCopyWith<$Res> {
+  factory $HeaderCopyWith(Header value, $Res Function(Header) then) =
+      _$HeaderCopyWithImpl<$Res>;
+  $Res call({String title});
+}
+
+class _$HeaderCopyWithImpl<$Res> extends _$WidgetTypeCopyWithImpl<$Res>
+    implements $HeaderCopyWith<$Res> {
+  _$HeaderCopyWithImpl(Header _value, $Res Function(Header) _then)
+      : super(_value, (v) => _then(v as Header));
+
+  @override
+  Header get _value => super._value as Header;
+
+  @override
+  $Res call({
+    Object title = freezed,
+  }) {
+    return _then(Header(
+      title: title == freezed ? _value.title : title as String,
+    ));
+  }
+}
+
 class _$Header implements Header {
   const _$Header({this.title});
 
@@ -269,13 +339,8 @@ class _$Header implements Header {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
   @override
-  _$Header copyWith({
-    Object title = freezed,
-  }) {
-    return _$Header(
-      title: title == freezed ? this.title : title as String,
-    );
-  }
+  $HeaderCopyWith<Header> get copyWith =>
+      _$HeaderCopyWithImpl<Header>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -338,6 +403,5 @@ abstract class Header implements WidgetType {
   const factory Header({String title}) = _$Header;
 
   String get title;
-
-  Header copyWith({String title});
+  $HeaderCopyWith<Header> get copyWith;
 }

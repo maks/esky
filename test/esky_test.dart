@@ -1,16 +1,9 @@
-import 'package:esky/esky.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('A group of tests', () {
-    Awesome awesome;
-
-    setUp(() {
-      awesome = Awesome();
-    });
-
     test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
+      expect(2 == 1 + 1, isTrue);
     });
   });
 }
